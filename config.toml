@@ -1,0 +1,14 @@
+baseURL = "https://jhlee1.github.io/"
+languageCode = "en-us"
+title = "Code Repository"
+theme = "jeffprod"
+
+[params]
+  AuthorName = "Joohan Lee"
+
+[permalinks]
+  post = "/:year/:filename"
+
+[taxonomies]
+  tag = "tags"
+  archive = "archives"

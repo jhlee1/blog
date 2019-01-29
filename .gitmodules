@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = https://github.com/jhlee1/jhlee1.github.io
+	branch = master
