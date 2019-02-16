@@ -3,7 +3,7 @@ echo -e "Deploying updates to GitHub..."
 REM Build the project.
 REM if using a theme, replace by `hugo -t <yourtheme>`
 @echo on
-hugo -t 'jeffprod'
+hugo -t jeffprod
 cd public
 git add -A
 if %1.==. (
