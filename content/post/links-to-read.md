@@ -9,6 +9,3 @@ These are the links that I already / will read
 
 1. Hugo
   - https://github.com/Integerous/Integerous.github.io
-
-2. Spring
-  -
