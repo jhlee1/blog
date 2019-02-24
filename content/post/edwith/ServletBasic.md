@@ -2,7 +2,7 @@
 title: "ServletBasic"
 date: 2019-01-30T22:06:44+09:00
 archives: "2019"
-tags: ["edwith"]
+tags: ["edwith", "servlet"]
 author: Joohan Lee
 ---
 

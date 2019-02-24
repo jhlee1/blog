@@ -2,7 +2,7 @@
 title: "Database"
 date: 2019-02-15T01:31:19+09:00
 archives: "2019"
-tags: []
+tags: ["edwith", "database", "webProgramming"]
 author: Joohan Lee
 ---
 
@@ -45,6 +45,3 @@ author: Joohan Lee
   - 운영비가 비싸다
   - 백업 및 복구에 대한 관리가 복잡
   - 부분적 데이터베이스 손실이 전체 시스템을 정지
-
-
-

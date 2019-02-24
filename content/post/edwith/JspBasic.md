@@ -2,7 +2,7 @@
 title: "JspBasic"
 date: 2019-02-06T02:51:19+09:00
 archives: "2019"
-tags: ["edwith"]
+tags: ["edwith", "jsp", "webProgramming"]
 author: Joohan Lee
 ---
 
@@ -41,7 +41,7 @@ sum10.jsp
    2.  해당 파일의 _jspService() 안을 살펴보면 jsp 파일의 내용이 변환되어 들어있는 것을 확인할 수 있다.
    3.  sum10_jsp.java는 서블릿 소스로 자동 컴파일 되면서 실행되어 결과가 Browser 상에 나타난다.
 
-   
+
 
 3. JSP 실행순서
    1. Browser가 WebServer에 JSP 요청을 전달

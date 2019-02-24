@@ -2,7 +2,7 @@
 title: "SQL Basic"
 date: 2019-02-16T21:45:07+09:00
 archives: "2019"
-tags: ["edwith", "SQL"]
+tags: ["edwith", "SQL", "webProgramming", "database"]
 author: Joohan Lee
 ---
 

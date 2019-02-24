@@ -2,7 +2,7 @@
 title: "SQL(Data Manipulation Language)"
 date: 2019-02-17T00:35:56+09:00
 archives: "2019"
-tags: ["edwith", "SQL"]
+tags: ["edwith", "SQL", "webProgramming", "database"]
 author: John SMITH
 ---
 

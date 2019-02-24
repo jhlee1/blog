@@ -2,7 +2,7 @@
 title: "JavascriptBasic"
 date: 2019-01-31T22:35:29+09:00
 archives: "2019"
-tags: ["javascript"]
+tags: ["javascript", "edwith", "webProgramming"]
 author: Joohan Lee
 ---
 
