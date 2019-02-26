@@ -697,3 +697,5 @@ false인 경우 script가 실행됨
 </body>
 </html>
 ```
+
+원본 강의: https://www.edwith.org/boostcourse-web

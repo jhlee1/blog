@@ -144,3 +144,6 @@ author: Joohan Lee
   - edwith에서 examples**.sql 다운 (examples.sql에는 연습을 위한 table 생성문과 해다 table에 값을 저장하는 입력문이 존재)
   - 다운 받은 파일이 있는 디렉토리로 이동 후
   - mysql -u**Username** -p **DBname** < **examples**.sql
+
+
+원본 강의: https://www.edwith.org/boostcourse-web

@@ -426,3 +426,5 @@ ApplicationScope01.jsp
 </body>
 </html>
 ```
+
+원본 강의: https://www.edwith.org/boostcourse-web

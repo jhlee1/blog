@@ -45,3 +45,5 @@ author: Joohan Lee
   - 운영비가 비싸다
   - 백업 및 복구에 대한 관리가 복잡
   - 부분적 데이터베이스 손실이 전체 시스템을 정지
+
+원본 강의: https://www.edwith.org/boostcourse-web

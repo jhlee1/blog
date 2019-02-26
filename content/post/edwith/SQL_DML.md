@@ -266,3 +266,5 @@ author: John SMITH
     - WHERE이 없는 경우 전체 ROW를 삭제하게 되므로 주의
     - ex) DELETE FROM role WHERE role_id = 200;
       - role_id가 200인 row 삭제
+
+원본 강의: https://www.edwith.org/boostcourse-web

@@ -230,3 +230,5 @@ XMLHTTPRequest 객체 생성 -> open으로 Request 보낼 준비 -> send로 Requ
 
 9. Debugging
 - Framework 없이 실행될 수 있는 것을 Vanilla JS라고 부름
+
+원본 강의: https://www.edwith.org/boostcourse-web

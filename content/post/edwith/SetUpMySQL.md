@@ -20,3 +20,5 @@ author: Joohan Lee
 - root 비밀번호만 정하고 Next 누르면됨
 - 윈도우가 켜질 때 실행시키려면 Windows Service 설정에서 시작시 켜지도록 설정해놓으면 됨
 - 환경변수 설정 - C:Program Files\MySQL\MySQL Server X.X\bin을 path에 추가하기
+
+원본 강의: https://www.edwith.org/boostcourse-web
