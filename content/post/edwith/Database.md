@@ -47,3 +47,4 @@ author: Joohan Lee
   - 부분적 데이터베이스 손실이 전체 시스템을 정지
 
 원본 강의: https://www.edwith.org/boostcourse-web
+
