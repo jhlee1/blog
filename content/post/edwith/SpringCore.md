@@ -47,7 +47,59 @@ author: Joohan Lee
     - spring-websocket : 웹 소켓 지원
     - spring-webmvc-portlet : 포틀릿 환경에서 사용할 MVC 구현
 
+### 3. IoC/DI Container
+
+- Container
+  - 인스턴스의 생명주기(LifeCycle) 관리
+  - 생성된 인스턴스에 추가적인 기능 제공
+  - ex) WAS가 Servlet을 관리해줌
+- IOC(Inversion of Controller)
+  - 제어의 역전 - 프로그램의 흐름을 개발자가 아니라 다른 프로그램이 하는 것
+  - Factory Design Pattern 사용
+- DI(Dependency Injection)
+  - class 사이의 의존 관계를 Bean설정 정보를 바탕으로 container가 자동으로 연결해주는 것
+
+ex) DI가 적용안된 경우
+
+```java
+class Engine {
+}
+
+class Car {
+    Engine v5 = new Engine();
+}
+```
+
+ex) DI 적용
+
+```java
+@Component
+class Engine {
+}
+
+@Component
+class Car {
+    @Autowired
+    Engine v5
+}
+```
+
+- Spring에서 제공하는 IoC/DI Container
+  - BeanFactory: IoC/DI에 대한 기본 기능 제공
+  - ApplicationContext: BeanFactory의 모든 기능을 포함하며 Transaction처리, AOP 등에 대한 처리를 할 수 있다. BeanPostProcessor, BeanFactoryPostProcessor등을 자동으로 등록하고, 국제화 처리, 어플리케이션 이벤트 등을 처리
+    - BeanPostProcessor: 컨테이너의 기본로직을  Overriding하여 인스턴스화 와 의존성 처리 로직 등을 개발자가 원하는 대로 구현 할 수 있다.
+    - BeanFactoryPostProcessor: meta data를 커스터마이징 할 수 있다.
+  - 일반적으로 BeanFactory는 너무 기본적인 기능만 제공하기 때문에 ApplicationContext를 더 많이 씀
 
 
 
+### 4. IoC/DI 실습 - XML 파일을 이용한 설정
+
+
+
+
+
+
+
+### 5. IoC/DI 실습 - Java Config을 이용한 설정
 
