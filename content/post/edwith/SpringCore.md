@@ -91,8 +91,6 @@ class Car {
     - BeanFactoryPostProcessor: meta data를 커스터마이징 할 수 있다.
   - 일반적으로 BeanFactory는 너무 기본적인 기능만 제공하기 때문에 ApplicationContext를 더 많이 씀
 
-
-
 ### 4. IoC/DI 실습 - XML 파일을 이용한 설정
 
 
@@ -103,3 +101,8 @@ class Car {
 
 ### 5. IoC/DI 실습 - Java Config을 이용한 설정
 
+
+
+
+
+원본 강의: https://www.edwith.org/boostcourse-web
