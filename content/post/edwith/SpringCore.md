@@ -93,14 +93,293 @@ class Car {
 
 ### 4. IoC/DI 실습 - XML 파일을 이용한 설정
 
+- Spring을 이용해서 Bean 객체 만들기
+- Bean - Spring컨테이너가 관리하는 객체 (직접 new연산자로 생성해서 사용하는 객체는 빈(Bean)이라고 말하지 않음)
+- Bean 생성 - 아래의 세가지 조건을 만족시켜야함
+  - 기본 생성자를 가지고 있다
+  - 필드는 private하게 선언
+  - getter, setter를 가진다. getName(), setName() 메소드를 name property라고 한다. (용어 중요)
+
+```java
+public class UserBean {
+	private String name;
+	private int age;
+	public UserBean() {
+
+	}
+
+	public UserBean(String name, int age, boolean male) {
+		this.name = name;
+		this.age = age;
+		this.male = male;
+	}
+
+	private boolean male;
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public boolean isMale() {
+		return male;
+	}
+	public void setMale(boolean male) {
+		this.male = male;
+	}
+}
+```
+
+- pom.xml 파일에서 <properties> 이용하여 dependency 추가하기
+
+```xml
+  <properties>
+  	...
+    <spring.version>4.3.14.RELEASE</spring.version>
+    ...
+  </properties>
+
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	...
+  </dependencies>
+```
+
+- main/resources에 applicationContext.xml 파일 추가하기
+- <bean> 태그 이용해서 UserBean 객체 생성하기
+
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="userBean" class="lee.joohan.diexam01.UserBean"></bean>
+</beans>
+```
+
+### 5. XML 이용해서 Dependency Injection
+
+- Engine class 생성
+
+```
+public class Engine {
+	public Engine() {
+		System.out.println("Engine constructor!");
+	}
+
+	public void exec() {
+		System.out.println("Engine is running");
+	}
+}
+```
+
+- Engine class에 dependency를 가지는 Car 생성
+
+```java
+public class Car {
+	private Engine v8;
+
+	public Car() {
+		System.out.println("Car constructor!");
+	}
+
+	public void setEngine(Engine e) {
+		this.v8 = e;
+	}
+
+	public void run() {
+		System.out.println("The car is running");
+		v8.exec();
+	}
+
+	public static void main(String[] args) {
+		Engine e = new Engine();
+		Car c = new Car();
+
+		c.setEngine(e);
+		c.run();
+	}
+}
+```
+
+- applicationContext.xml에 bean 추가
+
+```xml
+<bean id="engine" class="lee.joohan.diexam01.Engine" />
+<bean id="car" class="lee.joohan.diexam01.Car">
+		<property name="engine" ref="engine"></property>
+</bean>
+```
+
+- ApplicationContext를 생성하여 Spring Container에서 Car 객체 가져오기
+
+```java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ApplicationContextExam02 {
+	public static void main(String[] args) {
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+		Car car = (Car) applicationContext.getBean("car");
+
+		car.run();
+	}
+}
+```
+
+### 6. IoC/DI 실습 - Java Config을 이용한 설정
+
+#### 1. Annotations
+
+- @Configuration
+
+  - 스프링 설정 클래스를 선언하는 어노테이션
+
+  @Bean
+
+  - bean을 정의하는 어노테이션
+
+  - ```
+    @Autowired를 사용하지 않고 Bean 을 이용하는 이유: 외부 라이브러리(JDBC 등)에는 @Component와 같은 Annotation이 붙어있지 않기 때문에 이런식으로 생성해줘야함.
+    ```
+
+- @ComponentScan
+
+  - 지정한 패키지 내에 있는 @Controller, @Service, @Repository, @Component 어노테이션이 붙은 클래스를 찾아 컨테이너에 등록
+
+- @Component
+
+  - 컴포넌트 스캔의 대상이 되는 애노테이션 중 하나로써 주로 유틸, 기타 지원 클래스에 붙이는 어노테이션
+
+- @Autowired
+
+  - 주입 대상이되는 bean을 컨테이너에 찾아 주입하는 어노테이션
+
+#### 2. @Bean을 이용해 객체 생성하기
+
+- @Bean 태그를 붙인 메소드 안에서 객체를 생성해서 return처리
+- 메소드 이름이 bean id가 됨
+
+ApplicationConfig.java
+
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class ApplicationConfig {
+    @Bean
+    public Car car(Engine e) {
+        Car c = new Car();
+		c.setEngine(e);
+        return c;
+    }
+
+    @Bean
+    public Engine engine() {
+        return new Engine();
+    }
+}
+
+```
+
+- ApplicationContextExam03.java
+- **Bean id**를 이용해서 객체를 가져올 수 있고
+- Bean의 **class type**을 이용해서 가져올 수 있다.
+
+ApplicationContextExam03.java
+
+```java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class ApplicationContextExam03 {
+    public static  void main(String[] args) {
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
 
+//        Car car = (Car) applicationContext.getBean("car"); // 1번 방식
+        Car car = applicationContext.getBean(Car.class); //2번 방식
 
+        car.run();
+    }
+}
+```
 
+#### 3. @Component와 @Autowired를 이용해서 객체 생성하기
 
+- @componentScan에 어떤 package에 있는 Annotation이 붙은 객체를 생성할지 알려줘야함
 
-### 5. IoC/DI 실습 - Java Config을 이용한 설정
+ApplicationConfig2.java
 
+```java
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan("lee.joohan")
+public class ApplicationConfig2 {
+}
+```
+
+- 기존 Car와 Engine에 @Component 추가
+- @Autowired를 이용하기 때문에 Car에서 setEngine이 필요 없음
+
+Engine.java
+
+```java
+import org.springframework.stereotype.Component;
+
+@Component
+public class Engine {
+    public Engine() {
+        System.out.println("Engine constructor!");
+    }
+
+    public void exec() {
+        System.out.println("Engine is being operated");
+    }
+}
+```
+
+Car.java
+
+```java
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Car {
+    @Autowired
+    private Engine v8;
+
+//    public void setEngine(Engine engine) {
+//        v8 = engine;
+//    }
+
+    public Car() {
+        System.out.println("Car contructor!");
+    }
+
+    public void run() {
+        System.out.println("the car is running");
+        v8.exec();
+    }
+}
+```
+
+- **ApplicationContextExam03.java**에서 부르는 방식 @Bean을 사용했을 때랑 똑같음.
 
 
 
