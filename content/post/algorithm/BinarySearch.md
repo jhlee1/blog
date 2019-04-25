@@ -1,3 +1,13 @@
+---
+title: "Binary Search"
+date: 2019-04-24T13:09:29+09:00
+archives: "2019"
+tags: ["algorithm", "binary_search", "hackerrank"]
+author: Joohan Lee
+---
+
+## Binary Search
+
 - Recursive
 
 ```java
@@ -6,7 +16,7 @@ public class Solution {
         if (left > right) {
             return false;
         }
-        
+
         int mid = left + ((right - left) / 2); // To avoid integer overflow used instead of (left + right) / 2
 
         if(array[mid] == x) {
@@ -17,7 +27,7 @@ public class Solution {
         	return binarySearchRecursive(array, x, mid + 1, right);
     	}
     }
-    
+
     public static boolean binarySaerchRecursive(int[] array, int x) {
         return binarySaerchRecursive(array, x, 0, array.length - 1);
     }
@@ -32,10 +42,10 @@ public class Solution {
         if (left > right) {
             return false;
         }
-        
+
         int left = 0;
         int right = array.length - 1;
-        
+
         while (left <= right) {
         	int mid = left + ((right - left) / 2); // To avoid integer overflow used instead of (left + right) / 2
 
@@ -47,15 +57,12 @@ public class Solution {
         		left = mid + 1;
     		}            
         }
-       	
+
         return false;
     }
-    
+
     public static boolean binarySaerchRecursive(int[] array, int x) {
         return binarySaerchRecursive(array, x, 0, array.length - 1);
     }
 }
 ```
-
-
-
