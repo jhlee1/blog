@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Code Repository</title>
+    <link>https://jhlee1.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Code Repository</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Apr 2019 00:43:40 +0900</lastBuildDate>
+    
+	<atom:link href="https://jhlee1.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTMLTemplating</title>
+      <link>https://jhlee1.github.io/2019/htmltemplating/</link>
+      <pubDate>Thu, 18 Apr 2019 00:43:40 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/htmltemplating/</guid>
+      <description>HTML Templating 1. 개념  반복적인 HTML부분을 template로 만들어두고, 서버에서 온 데이터(주로JSON)을 결합해서, 화면에 추가하거나 삭제하는 작업 JSON 형태의 데이터를 받을 것이고요.  2. HTML과 JSON 결합 예제  HTML 코드  &amp;lt;li&amp;gt; &amp;lt;h4&amp;gt;{title}&amp;lt;/h4&amp;gt; &amp;lt;p&amp;gt;{content}&amp;lt;/p&amp;gt; &amp;lt;div&amp;gt;{price}&amp;lt;/div&amp;gt; &amp;lt;/li&amp;gt;   JSON Data  { title: &amp;quot;Test Product&amp;quot;, content: &amp;quot;This is a description&amp;quot;, price: 2000 }   결합된 HTML  &amp;lt;li&amp;gt; &amp;lt;h4&amp;gt;Test Product&amp;lt;/h4&amp;gt; &amp;lt;p&amp;gt;This is a description&amp;lt;/p&amp;gt; &amp;lt;div&amp;gt;2000&amp;lt;/div&amp;gt; &amp;lt;/li&amp;gt;   Console에서 실행해보기  var data = { title: &amp;quot;Test Product&amp;quot;, content: &amp;quot;This is a description&amp;quot;, price: 2000 }; var html = &amp;quot;&amp;lt;li&amp;gt;&amp;lt;h4&amp;gt;{title}&amp;lt;/h4&amp;gt;&amp;lt;p&amp;gt;{content}&amp;lt;/p&amp;gt;&amp;lt;div&amp;gt;{price}&amp;lt;/div&amp;gt;&amp;lt;/li&amp;gt;&amp;quot;; var resultHTML = html.</description>
+    </item>
+    
+    <item>
+      <title>JavascriptEventDelegation</title>
+      <link>https://jhlee1.github.io/2019/javascripteventdelegation/</link>
+      <pubDate>Tue, 16 Apr 2019 13:28:33 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/javascripteventdelegation/</guid>
+      <description>Javascript Event Delegation 1. 각각의 li 마다 event listener를 등록  main.html  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;./css/main.css&amp;quot;&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt; &amp;lt;img src=&amp;quot;https://images-na.,,,,,/513hgbYgL._AC_SY400_.jpg&amp;quot; class=&amp;quot;product-image&amp;quot; &amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;img src=&amp;quot;https://images-n,,,,,/41HoczB2L._AC_SY400_.jpg&amp;quot; class=&amp;quot;product-image&amp;quot; &amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;img src=&amp;quot;https://images-na.,,,,51AEisFiL._AC_SY400_.jpg&amp;quot; class=&amp;quot;product-image&amp;quot; &amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;img src=&amp;quot;https://images-na,,,,/51JVpV3ZL._AC_SY400_.jpg&amp;quot; class=&amp;quot;product-image&amp;quot; &amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;section class=&amp;quot;log&amp;quot;&amp;gt;&amp;lt;/section&amp;gt; &amp;lt;script src=&amp;quot;js/main.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/html&amp;gt;   main.js  var log = document.querySelector(&amp;quot;.log&amp;quot;); var lists = document.querySelector(&amp;quot;ul &amp;gt; li&amp;quot;); for (var i = 0; len = lists.</description>
+    </item>
+    
+    <item>
+      <title>Javascript DOM ContentLoaded Event</title>
+      <link>https://jhlee1.github.io/2019/javascriptload/</link>
+      <pubDate>Tue, 16 Apr 2019 13:25:24 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/javascriptload/</guid>
+      <description>DOM ContentLoaded Event 와 Window.load의 차이 1. DOM Content Loaded와 load의 차이  크롬 개발자도구의 Network panel을 열어서 왼쪽 아래에 DOMContentLoaded, load를 확인 DOM Tree 분석이 끝나면 DOMContentLoaded 이벤트가 발생하며, 그 외 모든 자원이 다 받아져서 브라우저에 렌더링(화면 표시)까지 다 끝난 시점에는 Load가 발생 보통 DOM tree가 다 만들어지면 DOM APIs를 통해서 DOM에 접근할 수 있기 때문에, 실제로 실무에서는 대부분의 자바스크립트코드는 DOMContentLoaded 이후에 동작하도록 구현하기 때문에 load는 거의 쓰이지 않음  //DOM Content Loaded Event 추가 document.</description>
+    </item>
+    
+    <item>
+      <title>JavascriptAsync</title>
+      <link>https://jhlee1.github.io/2019/javascriptasync/</link>
+      <pubDate>Fri, 12 Apr 2019 17:08:52 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/javascriptasync/</guid>
+      <description>1. AJAX와 비동기 function ajax() { var oReq = new XMLHttpRequest(); oReq.addEventListener(&amp;quot;load&amp;quot;, function() { //밑에 oReq.open과 oReq.send보다 더 늦게 실행됨. console.log(this.responseText); }); oReq.open(&amp;quot;GET&amp;quot;, &amp;quot;http://www.example.org/example/txt&amp;quot;); oReq.send(); }   비동기로 실행되는 EventListener속에 있는 anonymous 함수는 브라우저가 가지고 있는 Web Apis와 Callback Queue(=task queue)를 거쳐서 다시 Call Stack으로 들어가기 때문에 가장 나중에 실행됨.(Call stack -&amp;gt; Web Apis -&amp;gt; Callback Queue -&amp;gt; Call stack이 비어있는지 확인 후 Call Stack으로 이동 후 -&amp;gt; execute의 단계를 거침)</description>
+    </item>
+    
+    <item>
+      <title>DOM APIs</title>
+      <link>https://jhlee1.github.io/2019/dom_apis/</link>
+      <pubDate>Fri, 12 Apr 2019 10:53:30 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/dom_apis/</guid>
+      <description>DOM API 활용 1. 다양한 APIs  document. 관련API element. 관련 API  2. DOM 엘리먼트 오브젝트  tagName : Element의 tag name textContent : Node의 text content를 설정하거나 얻어옴 nodeType : Node type을 숫자로 나타냄 childNodes: Element의 Childs를 Node List로 나타냄 (Text node, Comment node 포함)  ex) ```javascript Javascipt 코드 var ul = document.querySelector(&amp;ldquo;ul&amp;rdquo;); var ulChildNodes = ul.childNodes   for (var index = 0; index &amp;lt; ulChildNodes.</description>
+    </item>
+    
+    <item>
+      <title>JavascriptObject</title>
+      <link>https://jhlee1.github.io/2019/javascriptobject/</link>
+      <pubDate>Wed, 27 Feb 2019 22:19:33 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/javascriptobject/</guid>
+      <description>Javascript Object 1. 객체  key, value의 자료구조 {}로 자료를 표현하며, JSON형식이랑 같다.  2. 선언 var obj = {name: &amp;quot;John Doe&amp;quot;, age: 20, addition: [{name: &amp;quot;another one&amp;quot;, age: 99}]} console.log(obj.name); // John Doe console.log(obj[&amp;quot;name&amp;quot;]); // John Doe console.log(obj[name]); // Error : name이라는 변수를 찾기 때문에 console.log(obj.addition[0].name); // another one  3. 객체 탐색  For-in loop  for-in은 key값을 탐색하기 위한 것이므로 Array(배열)가 아니라 Object(객체)에 사용한다   var obj = {name: &amp;quot;John Doe&amp;quot;, age: 20, addition: [{name: &amp;quot;another one&amp;quot;, age: 99}]} for(key in obj) { console.</description>
+    </item>
+    
+    <item>
+      <title>JavascriptArray</title>
+      <link>https://jhlee1.github.io/2019/javascriptarray/</link>
+      <pubDate>Wed, 27 Feb 2019 21:58:12 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/javascriptarray/</guid>
+      <description>Javascript Array 1. 배열 선언 var arr = []; var arr = [1, 2, 3, &amp;quot;hello&amp;quot;, null, true, [[{1:0}]]]; console.log(arr.length); // 7   new Array()로 선언할 수 도 있지만 대부분 []을 사용  2. 원소 추가  index를 이용한 추가  var arr = [4]; arr[1000] = 3; console.log(a.length); // 1001 console.log(arr[500]); // undefined   push를 이용한 추가  var arr = [4]; arr.push(5); console.log(arr.length); // 2  3.</description>
+    </item>
+    
+    <item>
+      <title>JavascriptBasic</title>
+      <link>https://jhlee1.github.io/2019/javascriptbasic/</link>
+      <pubDate>Thu, 31 Jan 2019 22:35:29 +0900</pubDate>
+      
+      <guid>https://jhlee1.github.io/2019/javascriptbasic/</guid>
+      <description>Javascript Hoisitng 함수는 실행되기 전 함수 안의 필요한 변수값들을 미리 다 모아서 선언  ex1)
+function outer() { var result = inner; console.log(result) //result: undefined error var inner = function () { return &amp;quot;inner value&amp;quot;; } }  inner의 내부값이 assign되기 전으로 처리되어 에러 발생.
+실제 처리된 결과:
+function outer() { var result; var inner; console.log(result); inner = function () { return &amp;quot;inner value&amp;quot;; } }  ex2)
+function outer() { var result = inner(); console.</description>
+    </item>
+    
+  </channel>
+</rss>
