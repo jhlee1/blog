@@ -110,7 +110,7 @@ private static final class ActorMapper implements RowMapper<Actor> {
 ```
 
 - INSERT 하기
-  - `this.jdbcTemplate.update("INSERT INTO t_actor (first_name, last_name) values (?, ?)", "Leonor", "Watling");
+  - `this.jdbcTemplate.update("INSERT INTO t_actor (first_name, last_name) values (?, ?)", "Leonor", "Watling");`
 - UPDATE 하기
   - `this.jdbcTemplate.update("UPDATE t_actor set = ? WHERE id=?"), "Benjo", 5276L);`
 - DELETE 하기
