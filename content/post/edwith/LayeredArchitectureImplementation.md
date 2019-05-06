@@ -42,5 +42,6 @@ author: Joohan Lee
 
 
 
+실습 소스코드:  <https://github.com/jhlee1/edwith_guestbook>
 
-
+원본 강의: https://www.edwith.org/boostcourse-web
