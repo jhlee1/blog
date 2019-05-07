@@ -24,7 +24,7 @@ var healthObj = {
 healthObj.showHealth();
 ```
 
- ### 2. this
+### 2. this
 
 - 객체 안에서의 this는 그 객체 자신
 - ES6에서는 객체에서 메서드를 사용할 때 'function' 키워드를 생략할 수 있다.
@@ -42,12 +42,10 @@ obj.setName("crong");
 const result = obj.getName();
 ```
 
-
-
-- JavaScript에는 전역스크립트나 함수가 실행될 때 실행문맥(Execution context)이 생성됩니다.
-- (참고로 실제 실행은 브라우저내에 stack 이라는 메모리 공간에 올라가서 실행됩니다)
-- 모든 context에는 참조하고 있는 객체(thisBinding이라 함)가 존재하는데, 현재 context가 참조하고 있는 객체를 알기 위해서는 this를 사용할 수 있습니다.
-- 다시 말해, 함수가 실행될때 함수에서 가리키는 this 키워드를 출력해보면 context가 참조하고 있는 객체를 알 수 있습니다.
+- JavaScript에는 전역스크립트나 함수가 실행될 때 실행문맥(Execution context)이 생성
+- (브라우저내에 stack에 올라가서 실행됨)
+- 모든 context에는 참조하고 있는 객체(thisBinding이라 함)가 존재하는데, 현재 context가 참조하고 있는 객체를 알기 위해서는 this를 사용
+- 즉, 함수가 실행될때 함수에서 가리키는 this 키워드를 출력해보면 context가 참조하고 있는 객체를 알 수 있음
 
 ```javascript
 function get() {
