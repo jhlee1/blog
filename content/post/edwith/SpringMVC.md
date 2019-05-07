@@ -1,5 +1,5 @@
 ---
-title: "Spring JDBC Implementation"
+title: "Spring MVC"
 date: 2019-04-29T12:43:40+09:00
 archives: "2019"
 tags: ["spring", "edwith", "webprogramming"]
